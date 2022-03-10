@@ -18,12 +18,6 @@ public class EmployeeService {
         this.employeeRepo = employeeRepo;
     }
 
-    public Employee getCurrentEmployee(Long id) {
-        Employee editEmployee = employeeRepo.findById(id).orElseThrow( () -> new IllegalStateException("Employee Does not Exit"));
-
-        return editEmployee;
-    }
-
     public List<Employee> listAllEmployees() {
         return employeeRepo.findAll();
     }

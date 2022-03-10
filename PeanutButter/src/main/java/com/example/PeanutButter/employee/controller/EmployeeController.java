@@ -27,15 +27,11 @@ public class EmployeeController {
         employeeService.addNewEmployee(employee);
     }
 
+
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping
     public ResponseEntity<Employee> EditCurrentEmployee(@RequestBody Employee employee){
         employeeService.editExisting(employee);
         return new ResponseEntity<>(employee, HttpStatus.OK);
     }
-
-    @GetMapping("/{id}")
-    public Employee getTopic(@PathVariable Long id){
-        return employeeService.getCurrentEmployee(id);
-    }
-
 }
